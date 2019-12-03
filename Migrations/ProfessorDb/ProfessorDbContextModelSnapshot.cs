@@ -31,16 +31,16 @@ namespace GestaoTarefasIPG.Migrations.ProfessorDb
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Numero_De_Gabinete")
+                    b.Property<string>("NumeroGabinete")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Numero_De_Professor")
+                    b.Property<string>("NumeroProfessor")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telemovel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Unidade_Curricular")
+                    b.Property<string>("UnidadeCurricular")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProfessorID");
