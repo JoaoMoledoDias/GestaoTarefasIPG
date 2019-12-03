@@ -7,7 +7,7 @@
 <h1>Lista de Professores</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Criar">Criar Novo</a>
 </p>
 <table class="table">
     <thead>
@@ -61,9 +61,9 @@
                 @Html.DisplayFor(modelItem => item.Unidade_Curricular)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProfessorID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProfessorID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProfessorID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ProfessorID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ProfessorID">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProfessorID">Apagar</a>
             </td>
         </tr>
 }
