@@ -20,13 +20,13 @@ namespace GestaoTarefasIPG.Models
         public string Telemovel { get; set; }
 
         //[]
-        public string NumeroProfessor { get; set; }
+        public string Numero_De_Professor { get; set; }
 
         //[]
-        public string NumeroGabinete { get; set; }
+        public string Numero_De_Gabinete { get; set; }
 
         //[]
-        public string UnidadeCurricular { get; set; }
+        public string Unidade_Curricular { get; set; }
 
     }
 }
