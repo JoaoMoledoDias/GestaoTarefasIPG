@@ -1,54 +1,60 @@
 ﻿@model GestaoTarefasIPG.Models.Professor
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
     <h4>Professor</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfessorID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProfessorID)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Telemovel)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Telemovel)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Numero_De_Professor)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroProfessor)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Numero_De_Professor)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroProfessor)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Numero_De_Gabinete)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroGabinete)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Numero_De_Gabinete)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroGabinete)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Unidade_Curricular)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UnidadeCurricular)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Unidade_Curricular)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UnidadeCurricular)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProfessorID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Editar" asp-route-id="@Model.ProfessorID">Edit</a> |
+    <a asp-action="Index">Voltar á lista Professores</a>
 </div>
