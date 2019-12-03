@@ -1,7 +1,7 @@
 ﻿@model GestaoTarefasIPG.Models.Professor
 
 @{
-    ViewData["Title"] = "Apagar";
+    ViewData["Title"] = "Delete";
 }
 
 <h1>Apagar</h1>
@@ -49,9 +49,9 @@
         </dd>
     </dl>
     
-    <form asp-action="Apagar">
+    <form asp-action="Delete">
         <input type="hidden" asp-for="ProfessorID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar á lista Professores</a>
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar á lista</a>
     </form>
 </div>
