@@ -31,9 +31,9 @@ namespace GestaoTarefasIPG.Migrations
                     Nome = table.Column<string>(maxLength: 60, nullable: true),
                     Email = table.Column<string>(nullable: true),
                     Telemovel = table.Column<string>(nullable: true),
-                    NumeroProfessor = table.Column<string>(nullable: true),
-                    NumeroGabinete = table.Column<string>(nullable: true),
-                    UnidadeCurricular = table.Column<string>(nullable: true)
+                    Numero_De_Professor = table.Column<string>(nullable: true),
+                    Numero_De_Gabinete = table.Column<string>(nullable: true),
+                    Unidade_Curricular = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

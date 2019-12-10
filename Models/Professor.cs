@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GestaoTarefasIPG.Models
 {
@@ -6,7 +10,7 @@ namespace GestaoTarefasIPG.Models
     {
         public int ProfessorID { get; set; }
 
-        [StringLength(60,MinimumLength = 3, ErrorMessage = "Nome incorreto! Insira um nome válido."), RegularExpression("{A-Z a-z}")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "Nome incorreto! Insira um nome válido."), RegularExpression("{A-Z a-z}")]
         public string Nome { get; set; }
 
         //[]
@@ -16,12 +20,13 @@ namespace GestaoTarefasIPG.Models
         public string Telemovel { get; set; }
 
         //[]
-        public string NumeroProfessor { get; set; }
+        public string Numero_De_Professor { get; set; }
 
         //[]
-        public string NumeroGabinete { get; set; }
-        
+        public string Numero_De_Gabinete { get; set; }
+
         //[]
-        public string  UnidadeCurricular { get; set; }
+        public string Unidade_Curricular { get; set; }
+
     }
 }
