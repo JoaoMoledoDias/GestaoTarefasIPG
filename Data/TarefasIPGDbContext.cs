@@ -6,13 +6,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GestaoTarefasIPG.Models
 {
-    public class FuncionarioContext : DbContext
+    public class TarefasIPGDbContext : DbContext
     {
-        public FuncionarioContext (DbContextOptions<FuncionarioContext> options)
+        public TarefasIPGDbContext(DbContextOptions<TarefasIPGDbContext> options)
             : base(options)
-        {
-        }
+        { }
 
         public DbSet<GestaoTarefasIPG.Models.Funcionario> Funcionario { get; set; }
+        
+        public DbSet<GestaoTarefasIPG.Models.Professor> Professor { get; set; }
     }
 }
+

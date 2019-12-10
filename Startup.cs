@@ -36,10 +36,10 @@ namespace GestaoTarefasIPG
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddDbContext<FuncionarioContext>(options =>
+            services.AddDbContext<TarefasIPGDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("FuncionarioContext")));
 
-            services.AddDbContext<ProfessorDbContext>(options =>
+            services.AddDbContext<TarefasIPGDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ProfessorDbContext")));
         }
 

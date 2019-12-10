@@ -11,9 +11,9 @@ namespace GestaoTarefasIPG.Controllers
 {
     public class ProfessorsController : Controller
     {
-        private readonly ProfessorDbContext _context;
+        private readonly TarefasIPGDbContext _context;
 
-        public ProfessorsController(ProfessorDbContext context)
+        public ProfessorsController(TarefasIPGDbContext context)
         {
             _context = context;
         }

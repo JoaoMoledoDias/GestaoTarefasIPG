@@ -9,8 +9,9 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #fff;
+  color: #000000 ;
 }
+
 
 .btn-primary {
   color: #fff;

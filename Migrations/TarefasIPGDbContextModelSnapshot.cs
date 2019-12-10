@@ -3,16 +3,14 @@ using GestaoTarefasIPG.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GestaoTarefasIPG.Migrations
 {
-    [DbContext(typeof(FuncionarioContext))]
-    [Migration("20191202231631_Initial")]
-    partial class Initial
+    [DbContext(typeof(TarefasIPGDbContext))]
+    partial class TarefasIPGDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,6 +41,37 @@ namespace GestaoTarefasIPG.Migrations
                     b.HasKey("FuncionarioId");
 
                     b.ToTable("Funcionario");
+                });
+
+            modelBuilder.Entity("GestaoTarefasIPG.Models.Professor", b =>
+                {
+                    b.Property<int>("ProfessorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("NumeroGabinete")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroProfessor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telemovel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UnidadeCurricular")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProfessorID");
+
+                    b.ToTable("Professor");
                 });
 #pragma warning restore 612, 618
         }
