@@ -42,7 +42,7 @@ namespace GestaoTarefasIPG
             services.AddDbContext<TarefasIPGDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ProfessorDbContext")));
 
-            services.AddDbContext<ServicoContext>(options =>
+            services.AddDbContext<TarefasIPGDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ServicoContext")));
         }
 
