@@ -66,9 +66,6 @@ namespace GestaoTarefasIPG.Migrations
                     b.Property<string>("Telemovel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Unidade_Curricular")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ProfessorID");
 
                     b.ToTable("Professor");
