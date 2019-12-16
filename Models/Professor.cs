@@ -19,12 +19,15 @@ namespace GestaoTarefasIPG.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um Número de telemóvel!")]
+        [StringLength(9)]
         public string Telemovel { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um Número de Professor!")]
+        [StringLength(9)]
         public string Numero_De_Professor { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um Número de Gabinete!")]
+        [StringLength(2)]
         public string Numero_De_Gabinete { get; set; }
 
     }
