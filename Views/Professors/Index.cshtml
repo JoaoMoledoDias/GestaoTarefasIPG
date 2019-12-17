@@ -7,7 +7,7 @@
     <h1>Lista de Professores</h1>
 
     <p>
-        <a asp-action="Create" class="btn btn-primary">Criar Novo</a>
+        <a asp-action="Create" class="btn btn-primary">Criar Novo Professor</a>
     </p>
 </div>
 
@@ -62,8 +62,7 @@
                     Detalhes</a> |
                     <a asp-action="Delete" 
                        asp-route-id="@item.ProfessorID" 
-                       class="btn btn-sm btn-danger" 
-                       onclick="return confirm('Tem a certeza que quer eliminar o professor? : @item.ProfessorID' );">
+                       class="btn btn-sm btn-danger" >
                     Eliminar</a>
                 </td>
             </tr>
