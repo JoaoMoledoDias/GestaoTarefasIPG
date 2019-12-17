@@ -3,18 +3,17 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div>
+    <h1>Lista de Professores</h1>
 
-<h1>Lista de Professores</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Criar Novo Professor</a>
+    </p>
+</div>
 
-<p>
-    <a asp-action="Create">Criar Novo</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model =>model.ProfessorID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
@@ -30,42 +29,43 @@
             <th>
                 @Html.DisplayNameFor(model => model.Numero_De_Gabinete)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unidade_Curricular)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telemovel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero_De_Professor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero_De_Gabinete)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Unidade_Curricular)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProfessorID">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ProfessorID">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProfessorID">Apagar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telemovel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero_De_Professor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero_De_Gabinete)
+                </td>
+                <td>
+                    <a asp-action="Edit" 
+                       asp-route-id="@item.ProfessorID" 
+                       class="btn btn-sm btn-warning">
+                    Editar</a> |
+                    <a asp-action="Details" 
+                       asp-route-id="@item.ProfessorID" 
+                       class="btn btn-sm btn-info">
+                    Detalhes</a> |
+                    <a asp-action="Delete" 
+                       asp-route-id="@item.ProfessorID" 
+                       class="btn btn-sm btn-danger" >
+                    Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

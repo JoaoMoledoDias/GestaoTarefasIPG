@@ -11,9 +11,9 @@ namespace GestaoTarefasIPG.Controllers
 {
     public class ServicosController : Controller
     {
-        private readonly ServicoContext _context;
+        private readonly TarefasIPGDbContext _context;
 
-        public ServicosController(ServicoContext context)
+        public ServicosController(TarefasIPGDbContext context)
         {
             _context = context;
         }

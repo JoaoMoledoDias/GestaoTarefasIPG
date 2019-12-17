@@ -6,7 +6,6 @@
 
 <h1>Apagar</h1>
 
-<h3>Tem a certeza que quer Apagar?</h3>
 <div>
     <h4>Professor</h4>
     <hr />
@@ -41,17 +40,11 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Numero_De_Gabinete)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Unidade_Curricular)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Unidade_Curricular)
-        </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="ProfessorID" />
-        <input type="submit" value="Apagar" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar á lista</a>
+        <input type="submit" value="Apagar" class="btn btn-danger" onclick="return confirm('Tem a certeza que quer eliminar o professor?')"/> |
+        <a asp-action="Index" class="btn btn-info">Voltar</a>
     </form>
 </div>
