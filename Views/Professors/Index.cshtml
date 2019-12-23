@@ -11,57 +11,55 @@
     </p>
 </div>
 
-<table class="table">
+<table class="table" >
     <thead>
         <tr>
-            <th>
+            <th >
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Email) 
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Telemovel)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Numero_De_Professor)
+                Numero do Professor
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Numero_De_Gabinete)
+               Numero do Gabinate
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
+        @foreach (var nome in Model){
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
+                    @Html.DisplayFor(modelItem => nome.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Email)
+                    @Html.DisplayFor(modelItem => nome.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Telemovel)
+                    @Html.DisplayFor(modelItem => nome.Telemovel)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Numero_De_Professor)
+                    @Html.DisplayFor(modelItem => nome.Numero_De_Professor)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Numero_De_Gabinete)
+                    @Html.DisplayFor(modelItem => nome.Numero_De_Gabinete)
                 </td>
                 <td>
                     <a asp-action="Edit" 
-                       asp-route-id="@item.ProfessorID" 
+                       asp-route-id="@nome.ProfessorID" 
                        class="btn btn-sm btn-warning">
                     Editar</a> |
                     <a asp-action="Details" 
-                       asp-route-id="@item.ProfessorID" 
+                       asp-route-id="@nome.ProfessorID" 
                        class="btn btn-sm btn-info">
                     Detalhes</a> |
                     <a asp-action="Delete" 
-                       asp-route-id="@item.ProfessorID" 
+                       asp-route-id="@nome.ProfessorID" 
                        class="btn btn-sm btn-danger" >
                     Eliminar</a>
                 </td>
