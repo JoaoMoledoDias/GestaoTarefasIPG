@@ -13,6 +13,14 @@ namespace GestaoTarefasIPG.Controllers
     {
         private readonly TarefasIPGDbContext _context;
 
+        private ITarefasIPGRepository repository;
+        
+        public ProfessorsController(ITarefasIPGRepository repository)
+        {
+            this.repository = repository;
+        }
+        public ViewResult List() => View(repository.Professor);
+
         public ProfessorsController(TarefasIPGDbContext context)
         {
             _context = context;
