@@ -11,6 +11,7 @@ namespace GestaoTarefasIPG.Controllers
 {
     public class FuncionariosController : Controller
     {
+       
         private readonly TarefasIPGDbContext _context;
 
         public FuncionariosController(TarefasIPGDbContext context)
