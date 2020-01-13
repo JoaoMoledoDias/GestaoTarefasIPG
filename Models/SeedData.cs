@@ -1,9 +1,25 @@
-﻿using System.Linq;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GestaoTarefasIPG.Models
 {
     public class SeedData
     {
+
+        //O admin tem comtrolo total do site 
+        //private const string ADMIN_ROLE = "admin";
+
+        //A distribuição de tarefas tem de ser por hierarquias e que deve ter as premições para poder ter as tarefas
+        //e mexer no site
+        
+        /*private const string PRESIDENTE_ROLE  = "presidente";
+        private const string DIRETOR_ROLE = "diretor";
+        private const string SECRETARIA_ROLE = "secretaria";
+        private const string PROFESSOR_ROLE = "professor";
+        private const string FUNCIONARIO_ROLE = "funcionario";*/
+
+
         public static void Populate(TarefasIPGDbContext db)
         {
             PopulateFuncionario(db);
@@ -25,6 +41,32 @@ namespace GestaoTarefasIPG.Models
 
             db.SaveChanges();
         }
+
+        /*public static async Task PopulateUsersAsync(UserManager<IdentityUser> userManager)
+        {
+            const string ADMIN_USERNAME = "admin@ipg.pt";
+            const string ADMIN_PASSWORD = "Admin@123$";
+
+            IdentityUser user = await userManager.FindByNameAsync(ADMIN_USERNAME);
+            if (user == null)
+            {
+                user = new IdentityUser
+                {
+                    UserName = ADMIN_USERNAME,
+                    Email = ADMIN_USERNAME
+                };
+
+                await userManager.CreateAsync(user, ADMIN_PASSWORD);
+            }
+
+            if (!await userManager.IsInRoleAsync(user, ADMIN_ROLE))
+            {
+                await userManager.AddToRoleAsync(user, ADMIN_ROLE);
+            }
+
+        }*/
+
+
         private static void PopulateServico(TarefasIPGDbContext db)
         {
             if (db.Servico.Any())
@@ -55,7 +97,24 @@ namespace GestaoTarefasIPG.Models
                 );
             db.SaveChanges();
         }
-
-
     }
+   /* public static async Task CreateRolesAsync(RoleManager<IdentityRole> roleManager)
+    {
+        //const string CAN_ADD_MENUS = "can_add_menus";
+
+        if (!await roleManager.RoleExistsAsync(ADMIN_ROLE))
+        {
+            await roleManager.CreateAsync(new IdentityRole(ADMIN_ROLE));
+        }
+
+        if (!await roleManager.RoleExistsAsync(SECRETARY_ROLE))
+        {
+            await roleManager.CreateAsync(new IdentityRole(SECRETARY_ROLE));
+        }
+
+        if (!await roleManager.RoleExistsAsync(CLEANING_ROLE))
+        {
+            await roleManager.CreateAsync(new IdentityRole(CLEANING_ROLE));
+        }
+    }*/
 }
