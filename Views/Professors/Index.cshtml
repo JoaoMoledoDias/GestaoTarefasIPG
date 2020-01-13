@@ -8,7 +8,7 @@
         <h1>Professores do Instituto Politécnico Da Guarda</h1>
 
         <p>
-            <a asp-action="Create" class="btn btn-primary">Criar Novo Professor</a>
+            <a asp-action="Create" class="btn btn-outline-primary">Criar Novo Professor</a>
         </p>
        
         <nav>
@@ -24,50 +24,50 @@
     </div>
 
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
-                Nome do professor
+                Nome
             </th>
             <th>
-                Email do professor
+                Email
             </th>
             <th>
-                Número de telemóvel
+                Telemóvel
             </th>
             <th>
-                Numero do Professor
+                Número
             </th>
             <th>
-                Numero do Gabinate
+                Gabinete
             </th>
             <th>
             </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var nome in Model.Professor)
+        @foreach (var item in Model.Professor)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => nome.Nome)
+                    @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => nome.Email)
+                    @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => nome.Telemovel)
+                    @Html.DisplayFor(modelItem => item.Telemovel)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => nome.Numero_De_Professor)
+                    @Html.DisplayFor(modelItem => item.Numero_De_Professor)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => nome.Numero_De_Gabinete)
+                    @Html.DisplayFor(modelItem => item.Numero_De_Gabinete)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@nome.ProfessorID" class="btn btn-sm btn-warning">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@nome.ProfessorID" class="btn btn-sm btn-info">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@nome.ProfessorID" class="btn btn-sm btn-danger">Eliminar</a>
+                    <a asp-action="Edit" asp-route-id="@item.ProfessorID" class="btn btn-outline-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProfessorID" class="btn btn-outline-info">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProfessorID" class="btn btn-outline-danger">Eliminar</a>
                 </td>
             </tr>
         }
