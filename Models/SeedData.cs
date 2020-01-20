@@ -63,6 +63,7 @@ namespace GestaoTarefasIPG.Models
             {
                 await userManager.AddToRoleAsync(user, ADMIN_ROLE);
             }
+
         }*/
 
 

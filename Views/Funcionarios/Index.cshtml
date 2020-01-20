@@ -7,10 +7,10 @@
 <h1>Funcionários do Instituto Politécnico da Guarda</h1>
 
 <p>
-    <a asp-action="Create" class="btn btb-primary">Criar Novo Funcionário </a>
+    <a asp-action="Create" class="btn btb-outline-primary">Criar Novo Funcionário </a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
                 Nome
@@ -44,9 +44,9 @@
                     @Html.DisplayFor(modelItem => item.Telemovel)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.FuncionarioId" class="btn btn-sm btn-warning">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.FuncionarioId" class="btn btn-sm btn-info">Detalhes</a>
-                    <a asp-action="Delete" asp-route-id="@item.FuncionarioId" class="btn btn-sm btn-danger">Apagar</a>
+                    <a asp-action="Edit" asp-route-id="@item.FuncionarioId" class="btn btn-outline-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.FuncionarioId" class="btn btn-outline-info">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.FuncionarioId" class="btn btn-outline-danger">Apagar</a>
                 </td>
             </tr>
         }
