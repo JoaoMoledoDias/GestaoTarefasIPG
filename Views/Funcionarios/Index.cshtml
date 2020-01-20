@@ -7,8 +7,19 @@
 <h1>Funcionários do Instituto Politécnico da Guarda</h1>
 
 <p>
-    <a asp-action="Create" class="btn btb-outline-primary">Criar Novo Funcionário </a>
+    <a asp-action="Create" class="btn btn-outline-primary">Criar Novo Funcioário</a>
 </p>
+
+<nav>
+    @using (Html.BeginForm())
+    {
+        <p>
+            Nome: <input type="text" name="searchString" value="@Model.StringProcura" placeholder="Procurar por nome" />
+            <button type="submit" class="btn btn-light" asp-action="Index" asp-route-page="1" asp-route-searchString="@Model.StringProcura">Procurar</button>
+            <a asp-action="Index" class="btn btn-info">Lista inteira</a>
+        </p>
+    }
+</nav>
 <table class="table">
     <thead class="thead-dark">
         <tr>

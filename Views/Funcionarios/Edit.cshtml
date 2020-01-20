@@ -33,15 +33,12 @@
                 <input asp-for="Telemovel" class="form-control" />
                 <span asp-validation-for="Telemovel" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
-            </div>
+           
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Voltar a Lista de Funcionários</a>
+<div class="form-group">
+    <a asp-action="Save" class="btn btn-primary">Guardar</a>  <a asp-action="Index" class="btn btn-info">Voltar</a>
 </div>
 
 @section Scripts {

@@ -34,9 +34,8 @@
         </dd>
     </dl>
     
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="FuncionarioId" />
-        <input type="submit" value="Apagar" class="btn btn-danger" onclick="return confirm('Tem a certeza que quer eliminar o funcionário?')" /> |
-        <a asp-action="Index" class="btn btn-info">Voltar</a>
-    </form>
+    
+        <div class="form-group">
+            <a asp-action="Delete" class="btn btn-danger">Eliminar</a> <a asp-action="Index" class="btn btn-info">Voltar</a>
+        </div>
 </div>
