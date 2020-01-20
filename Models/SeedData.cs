@@ -36,7 +36,7 @@ namespace GestaoTarefasIPG.Models
                 new Funcionario { Nome = "André Alberto", Telemovel = "962108458", Email = "andrealb_45@gmail.com", Servico = "Bar ESTG" },
                 new Funcionario { Nome = "João Dias", Telemovel = "913409571", Email = "joao.dias56@gmail.com", Servico = "Direção ESTG" },
                 new Funcionario { Nome = "Vita", Telemovel = "962108458", Email = "joao.dias56@gmail.com", Servico = "Direção IPG" },
-                new Funcionario { Nome = "Francisco Cordeiro", Telemovel = "930912764", Email = "xicokiko23@gmail.com", Servico = "Direção ESCED" },
+                new Funcionario { Nome = "Francisco Cordeiro", Telemovel = "930912764", Email = "xicokiko23@gmail.com", Servico = "Direção ESCED" }
                 );
 
             db.SaveChanges();
@@ -63,7 +63,6 @@ namespace GestaoTarefasIPG.Models
             {
                 await userManager.AddToRoleAsync(user, ADMIN_ROLE);
             }
-
         }*/
 
 
