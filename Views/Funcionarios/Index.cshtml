@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GestaoTarefasIPG.Models.Funcionario>
+﻿@model Pagi_FuncionarioViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -7,47 +7,73 @@
 <h1>Funcionários do Instituto Politécnico da Guarda</h1>
 
 <p>
-    <a asp-action="Create" class="btn btb-primary">Criar Novo Funcionário </a>
+    <a asp-action="Create" class="btn btn-outline-primary">Criar Novo Funcioário</a>
 </p>
+
+<nav>
+    @using (Html.BeginForm())
+    {
+        <p>
+            Nome: <input type="text" name="searchString" value="@Model.StringProcura" placeholder="Procurar por nome" />
+            <button type="submit" class="btn btn-light" asp-action="Index" asp-route-page="1" asp-route-searchString="@Model.StringProcura">Procurar</button>
+            <a asp-action="Index" class="btn btn-info">Lista inteira</a>
+        </p>
+    }
+</nav>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Servico)
+                Serviço
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telemovel)
+                Telemóvel
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Servico)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telemovel) 
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.FuncionarioId"class="btn btn-sm btn-warning">Editar</a> 
-                <a asp-action="Details" asp-route-id="@item.FuncionarioId" class="btn btn-sm btn-info">Detalhes</a>
-                <a asp-action="Delete" asp-route-id="@item.FuncionarioId" class="btn btn-sm btn-danger">Apagar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Funcionario)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Servico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telemovel)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FuncionarioId" class="btn btn-outline-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.FuncionarioId" class="btn btn-outline-info">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.FuncionarioId" class="btn btn-outline-danger">Apagar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@if (Model.TotalPaginas > 1)
+{
+    @for (int i = 1; i <= Model.TotalPaginas; i++)
+    {
+        @if (i == Model.PaginaAtual)
+        {
+            <a href="#" class="btn btn-primary">@i</a>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i" class="btn btn-outline-info">@i</a>
+        }
+    }
+}

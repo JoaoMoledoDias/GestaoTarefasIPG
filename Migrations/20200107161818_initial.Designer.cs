@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestaoTarefasIPG.Migrations
 {
     [DbContext(typeof(TarefasIPGDbContext))]
-    [Migration("20191210151806_Initial")]
-    partial class Initial
+    [Migration("20200107161818_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,16 +28,20 @@ namespace GestaoTarefasIPG.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
                     b.Property<string>("Servico")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telemovel")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FuncionarioId");
@@ -53,27 +57,57 @@ namespace GestaoTarefasIPG.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(80)")
+                        .HasMaxLength(80);
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(60)")
-                        .HasMaxLength(60);
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("NumeroGabinete")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Numero_De_Gabinete")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(2)")
+                        .HasMaxLength(2);
 
-                    b.Property<string>("NumeroProfessor")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Numero_De_Professor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(9)")
+                        .HasMaxLength(9);
 
                     b.Property<string>("Telemovel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UnidadeCurricular")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(9)")
+                        .HasMaxLength(9);
 
                     b.HasKey("ProfessorID");
 
                     b.ToTable("Professor");
+                });
+
+            modelBuilder.Entity("GestaoTarefasIPG.Models.Servico", b =>
+                {
+                    b.Property<int>("ServicoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Localizacao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ServicoId");
+
+                    b.ToTable("Servico");
                 });
 #pragma warning restore 612, 618
         }

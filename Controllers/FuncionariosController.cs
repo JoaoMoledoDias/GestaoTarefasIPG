@@ -12,17 +12,53 @@ namespace GestaoTarefasIPG.Controllers
     public class FuncionariosController : Controller
     {
         private readonly TarefasIPGDbContext _context;
+        public int PageSize = 2;
+
 
         public FuncionariosController(TarefasIPGDbContext context)
         {
             _context = context;
         }
 
-        // GET: Funcionarios
-        public async Task<IActionResult> Index()
+        // GET: Professors
+       
+        public async Task<IActionResult> Index(int page = 1, string searchString = null)
         {
-            return View(await _context.Funcionario.ToListAsync());
+            
+            var Funcionarios = from p in _context.Funcionario
+                            select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Funcionarios = Funcionarios.Where(p => p.Nome.Contains(searchString));
+            }
+
+            decimal nFuncionarios = Funcionarios.Count();
+            int NUMERO_PAGINAS = ((int)nFuncionarios / PageSize);
+
+            if (nFuncionarios % PageSize == 0)
+            {
+                NUMERO_PAGINAS -= 1;
+            }
+
+            Pagi_FuncionarioViewModel vm = new Pagi_FuncionarioViewModel
+            {
+                Funcionario = Funcionarios.OrderBy(p => p.Nome).Skip((page - 1) * PageSize).Take(PageSize),
+                PaginaAtual = page,
+                PrimeiraPagina = Math.Max(1, page - NUMERO_PAGINAS),
+                TotalPaginas = (int)Math.Ceiling(nFuncionarios / PageSize)
+            };
+
+            vm.UltimaPagina = Math.Min(vm.TotalPaginas, page + NUMERO_PAGINAS);
+            vm.StringProcura = searchString;
+            return View(vm);
         }
+
+
+
+
+
+
 
         // GET: Funcionarios/Details/5
         public async Task<IActionResult> Details(int? id)

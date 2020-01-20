@@ -12,6 +12,8 @@ namespace GestaoTarefasIPG.Controllers
     public class ProfessorsController : Controller
     {
         private readonly TarefasIPGDbContext _context;
+        public int PageSize = 2;
+
 
         public ProfessorsController(TarefasIPGDbContext context)
         {
@@ -19,9 +21,35 @@ namespace GestaoTarefasIPG.Controllers
         }
 
         // GET: Professors
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, string searchString = null)
         {
-            return View(await _context.Professor.ToListAsync());
+            var Professor = from p in _context.Professor
+                              select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+               Professor = Professor.Where(p => p.Nome.Contains(searchString));
+            }
+
+            decimal nProfessores = Professor.Count();
+            int NUMERO_PAGINAS = ((int)nProfessores / PageSize);
+
+            if (nProfessores % PageSize == 0)
+            {
+                NUMERO_PAGINAS -= 1;
+            }
+
+            ProfessorViewModel vm = new ProfessorViewModel
+            {
+                Professor = Professor.OrderBy(p => p.Nome).Skip((page - 1) * PageSize).Take(PageSize),
+                PaginaAtual = page,
+                PrimeiraPagina = Math.Max(1, page - NUMERO_PAGINAS),
+                TotalPaginas = (int)Math.Ceiling(nProfessores / PageSize)
+            };
+
+            vm.UltimaPagina = Math.Min(vm.TotalPaginas, page + NUMERO_PAGINAS);
+            vm.StringProcura = searchString;
+            return View(vm);
         }
 
         // GET: Professors/Details/5

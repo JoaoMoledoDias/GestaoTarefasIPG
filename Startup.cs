@@ -28,6 +28,8 @@ namespace GestaoTarefasIPG
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+           
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -51,6 +53,12 @@ namespace GestaoTarefasIPG
         {
             if (env.IsDevelopment())
             {
+                using (var serviceScope = app.ApplicationServices.CreateScope())
+                {
+                    var db = serviceScope.ServiceProvider.GetService<TarefasIPGDbContext>();
+                    SeedData.Populate(db);
+                    //SeedData.PopulateUsersAsync(userManager).Wait();
+                }
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
