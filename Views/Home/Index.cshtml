@@ -1,21 +1,57 @@
-﻿ @{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-    <div class="text-center">
-        <img class="img-fluid" src="~/imagens/politecnico-guarda-1300x485.jpg" />
+    <html lang="pt-pt">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/business-frontpage.css" rel="stylesheet">
+    <header>
         <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <h6>Lista de Professores</h6>
-                    <a href="ProfessorsID"></a>
+            <img src="~/imagens/politecnico-guarda-1300x485.jpg" style="width:100%; opacity:0.6;">
+            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+                <h1 style="font-family:'Times New Roman'; font-size:74px; color:black;">
+                    Gestão de Tarefas do IPG
+                </h1>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="~/imagens/IPG (1).jpg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">ESTG</h4>
+                        <p class="card-text">A Escola Superior de Tecnologia e Gestão (ESTG), enquanto parte interessada do Projecto Educativo do Instituto Politécnico da Guarda (IPG), promove a integração do ensino, da investigação aplicada e da prestação de serviços no âmbito de um centro de inovação e saber-fazer com vocação euro-transfronteiriça.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="http://www.estg.ipg.pt" class="btn btn-primary">Saber Mais</a>
+                    </div>
                 </div>
-                <div class="col-sm">
-                    <h6>Lista de Funcionários</h6>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="~/imagens/Esecd.jpg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">ESECD</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="http://www.esecd.ipg.pt" class="btn btn-primary">Saber Mais</a>
+                    </div>
                 </div>
-                <div class="col-sm">
-                    <h6>Lista de Serviços</h6>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="~/imagens/ess.ipg.jpg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">ESS</h4>
+                        <p class="card-text">A Escola Superior de Saúde, da Guarda, é uma unidade vocacionada para a criação, transmissão e difusão da cultura, da ciência e da tecnologia, que tem por missão, enquanto estabelecimento de ensino superior politécnico, formar profissionais com elevada qualificação no âmbito da saúde, nos aspectos científico, técnico, pedagógico, humano e cultural.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="http://www.ess.ipg.pt" class="btn btn-primary">Saber Mais</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </html>

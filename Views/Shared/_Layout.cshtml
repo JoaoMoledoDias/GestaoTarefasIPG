@@ -5,38 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Gestao de Tarefas do IPG</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/business-frontpage.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="~/imagens/ipg.jpg" width="50" height="60">
-                </a>
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GestaoTarefasIPG</a>
-                <div class="topnav-right">
-                    <a style="color:white" asp-controller="Professors" asp-action="Index">Professores</a>
-                    <a style="color:white" asp-controller="Funcionarios" asp-action="Index">Funcionários</a>
-                    <a style="color:white" asp-controller="Servicos" asp-action="Index">Serviços</a>
-                    <a style="color:white"  href="Login">Login</a>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Gestão de Tarefas IPG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Professors" asp-action="Index">Professores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Funcionarios" asp-action="Index">Funcionários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Servicos" asp-action="Index">Serviços</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
 </body>
 </html>

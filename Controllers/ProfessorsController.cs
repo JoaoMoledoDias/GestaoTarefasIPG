@@ -12,7 +12,7 @@ namespace GestaoTarefasIPG.Controllers
     public class ProfessorsController : Controller
     {
         private readonly TarefasIPGDbContext _context;
-        public int PageSize = 2;
+        public int PageSize = 5;
 
 
         public ProfessorsController(TarefasIPGDbContext context)
