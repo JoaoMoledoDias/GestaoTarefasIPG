@@ -89,7 +89,7 @@ namespace GestaoTarefasIPG.Models
                 new Servico { Nome = "Conselho Pedagógico da ESTG", Descricao = "Orgão regulador da escola", Localizacao = "ESTG" },
                 new Servico { Nome = "Secretaria Virtual da ESTG", Descricao = "Orgão regulador da escola", Localizacao = "ESTG" },
                 new Servico { Nome = "Provedor do Estudante", Descricao = "Defesa e promoção dos direitos e os interesses dos estudantes", Localizacao = "IPG" },
-                new Servico { Nome = "Ação Social", Descricao = "Unidade funcional, integrada na Instituição, dotada de autonomia administrativa e financeira.", Localizacao = "Residências" }
+                new Servico { Nome = "Ação Social", Descricao = "Unidade funcional, autonomia administrativa e financeira.", Localizacao = "Residências" }
                 );
 
             db.SaveChanges();
