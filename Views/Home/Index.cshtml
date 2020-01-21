@@ -1,13 +1,19 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-    <html lang="pt-pt">
+﻿<html lang="pt-pt">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gestão Tarefas IPG</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/business-frontpage.css" rel="stylesheet">
-<body>
     <header>
         <div class="container">
-            <img src="~/imagens/pag_principal.png" style="width:100%;">
+            <img src="~/imagens/politecnico-guarda-1300x485.jpg" style="width:100%; opacity:0.6;">
+            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+                <h1 style="font-family:'Times New Roman'; font-size:74px; color:black;">
+                    Gestão de Tarefas do IPG
+                </h1>
+            </div>
         </div>
     </header>
     <div class="container">
@@ -50,5 +56,4 @@
             </div>
         </div>
     </div>
-</body>
     </html>
