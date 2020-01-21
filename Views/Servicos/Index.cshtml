@@ -13,7 +13,7 @@
     @using (Html.BeginForm())
     {
         <p>
-            Nome: <input type="text" name="searchString" value="@Model.StringProcura" placeholder="Procurar por Serviço" />
+            Nome: <input type="text" name="searchString" value="@Model.StringProcura" placeholder="Procurar por Serviço " />
             <button type="submit" class="btn btn-light" asp-action="Index" asp-route-page="1" asp-route-searchString="@Model.StringProcura">Procurar</button>
             <a asp-action="Index" class="btn btn-info">Voltar</a>
         </p>
