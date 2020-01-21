@@ -12,16 +12,44 @@ namespace GestaoTarefasIPG.Controllers
     public class ServicosController : Controller
     {
         private readonly TarefasIPGDbContext _context;
+        public int PageSize = 5;
+
 
         public ServicosController(TarefasIPGDbContext context)
         {
             _context = context;
         }
 
-        // GET: Servicos
-        public async Task<IActionResult> Index()
+        // GET: Serviços
+        public async Task<IActionResult> Index(int page = 1, string searchString = null)
         {
-            return View(await _context.Servico.ToListAsync());
+            var Servicos = from p in _context.Servico
+                            select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Servicos = Servicos.Where(p => p.Nome.Contains(searchString));
+            }
+
+            decimal nServicos = Servicos.Count();
+            int NUMERO_PAGINAS = ((int)nServicos / PageSize);
+
+            if (nServicos % PageSize == 0)
+            {
+                NUMERO_PAGINAS -= 1;
+            }
+
+            ServicosViewModel vm = new ServicosViewModel
+            {
+                Servico = Servicos.OrderBy(p => p.Nome).Skip((page - 1) * PageSize).Take(PageSize),
+                PaginaAtual = page,
+                PrimeiraPagina = Math.Max(1, page - NUMERO_PAGINAS),
+                TotalPaginas = (int)Math.Ceiling(nServicos / PageSize)
+            };
+
+            vm.UltimaPagina = Math.Min(vm.TotalPaginas, page + NUMERO_PAGINAS);
+            vm.StringProcura = searchString;
+            return View(vm);
         }
 
         // GET: Servicos/Details/5
