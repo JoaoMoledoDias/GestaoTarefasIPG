@@ -35,8 +35,14 @@ namespace GestaoTarefasIPG.Models
             db.Funcionario.AddRange(
                 new Funcionario { Nome = "André Alberto", Telemovel = "962108458", Email = "andrealb_45@gmail.com", Servico = "Bar ESTG" },
                 new Funcionario { Nome = "João Dias", Telemovel = "913409571", Email = "joao.dias56@gmail.com", Servico = "Direção ESTG" },
-                new Funcionario { Nome = "Vita", Telemovel = "962108458", Email = "joao.dias56@gmail.com", Servico = "Direção IPG" },
-                new Funcionario { Nome = "Francisco Cordeiro", Telemovel = "930912764", Email = "xicokiko23@gmail.com", Servico = "Direção ESCED" }
+                new Funcionario { Nome = "Vital", Telemovel = "962108458", Email = "joao.dias56@gmail.com", Servico = "Direção IPG" },
+                new Funcionario { Nome = "Francisco Cordeiro", Telemovel = "930912764", Email = "xicokiko23@gmail.com", Servico = "Direção ESCED" },
+                new Funcionario { Nome = "Tiago Pereira", Telemovel = "935676486", Email = "tigas_pereira@gmail.com", Servico = "Bar ESTG" },
+                new Funcionario { Nome = "Ana Marques", Telemovel = "912587413", Email = "ana_mar@gmail.com", Servico = "Reprografia" },
+                new Funcionario { Nome = "Deolinda Machado", Telemovel = "933571598", Email = "linda_machado@gmail.com", Servico = "Secretaria" },
+                new Funcionario { Nome = "José Ribeiro", Telemovel = "964567893", Email = "jose_ribeiro74@gmail.com", Servico = "Direção ESS" },
+                new Funcionario { Nome = "Leonardo Martins", Telemovel = "912547869", Email = "leo_martins20@gmail.com", Servico = "Cantina" },
+                new Funcionario { Nome = "Bruno Esteves", Telemovel = "936864259", Email = "bruno_teves25@gmail.com", Servico = "Bar ESS" }
                 );
 
             db.SaveChanges();
