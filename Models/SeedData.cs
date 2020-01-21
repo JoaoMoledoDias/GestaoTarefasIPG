@@ -80,10 +80,16 @@ namespace GestaoTarefasIPG.Models
                 return;
             }
             db.Servico.AddRange(
-                new Servico { Nome = "Direção ESTG", Descricao = "", Localizacao = "ESTG" },
-                new Servico { Nome = "Direção ESCED", Descricao = "", Localizacao = "ESCED" },
-                new Servico { Nome = "Direção IPG", Descricao = "", Localizacao = "Serviços Centrais" },
-                new Servico { Nome = "Bar ESTG", Descricao = "", Localizacao = "ESTG" }
+                new Servico { Nome = "Direção ESTG", Descricao = "Orgão regulador da escola", Localizacao = "ESTG" },
+                new Servico { Nome = "Direção ESECD", Descricao = "Orgão regulador da escola", Localizacao = "ESECD" },
+                new Servico { Nome = "Direção ESS", Descricao = "Orgão regulador da escola", Localizacao = "ESS" },
+                new Servico { Nome = "Serviços Académicos", Descricao = "Gestão administrativa e académica", Localizacao = "Serviços Centrais" },
+                new Servico { Nome = "Gabinete de apoio á direção da ESTG", Descricao = "Apoio á direção", Localizacao = "ESTG" },
+                new Servico { Nome = "Conselho Técnico Científico da ESTG", Descricao = "Orgão escolar", Localizacao = "ESTG" },
+                new Servico { Nome = "Conselho Pedagógico da ESTG", Descricao = "Orgão regulador da escola", Localizacao = "ESTG" },
+                new Servico { Nome = "Secretaria Virtual da ESTG", Descricao = "Orgão regulador da escola", Localizacao = "ESTG" },
+                new Servico { Nome = "Provedor do Estudante", Descricao = "Defesa e promoção dos direitos e os interesses dos estudantes", Localizacao = "IPG" },
+                new Servico { Nome = "Ação Social", Descricao = "Unidade funcional, integrada na Instituição, dotada de autonomia administrativa e financeira.", Localizacao = "Residências" }
                 );
 
             db.SaveChanges();
