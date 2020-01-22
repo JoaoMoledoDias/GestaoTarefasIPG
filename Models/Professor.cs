@@ -10,9 +10,10 @@ namespace GestaoTarefasIPG.Models
     {
         public int ProfessorID { get; set; }
 
-        [StringLength(100)]
         [Display(Name = "Nome professor")]
         [Required(ErrorMessage = "Por favor introduza um Nome!")]
+        [StringLength(50, ErrorMessage = "O Nome terá que conter no mínimo 3 caractéres válidos (A-Z)", MinimumLength = 3)]
+        [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$", ErrorMessage = "Por favor introduza um Nome válido!")]
         public string Nome { get; set; }
 
         [StringLength(80)]
@@ -31,11 +32,13 @@ namespace GestaoTarefasIPG.Models
         [StringLength(9)]
         [Display(Name = "Número de professor")]
         [Required(ErrorMessage = "Por favor introduza um Número de Professor!")]
+        [RegularExpression(@"^?([0-9]{3})?([0−9]3)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de professor invalido!")]
         public string Numero_De_Professor { get; set; }
 
         [StringLength(2)]
         [Display(Name = "Número de gabinete")]
         [Required(ErrorMessage = "Por favor introduza um Número de Gabinete!")]
+        [RegularExpression(@"^?([0-9]{3})?([0−9]3)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de gabinete invalido!")]
         public string Numero_De_Gabinete { get; set; }
 
     }
