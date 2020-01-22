@@ -12,13 +12,13 @@ namespace GestaoTarefasIPG.Models
 
         [StringLength(50, ErrorMessage = "O Nome terá que conter no mínimo 3 caracteres válidos (A-Z)", MinimumLength = 3)]
         [Required(ErrorMessage = "Por favor introduza o Nome!")]
-        [RegularExpression(@"^[a-zA-ZÀ-ÿ0-9]*$", ErrorMessage = "Por favor introduza um Nome válido!")]
+        [RegularExpression(@"^[a-zA-ZÀ-ÿ]*$", ErrorMessage = "Por favor introduza um Nome válido!")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza o Serviço!")]
         [StringLength(50, ErrorMessage = "O Nome terá que conter no mínimo 3 caracteres válidos (A-Z)", MinimumLength = 3)]
         public string Servico { get; set; }
         [Required(ErrorMessage = "Por favor introduza o Email!")]
-        [RegularExpression(@"^[a-zA-ZÀ-ÿ0-9]*$", ErrorMessage = "Por favor introduza um email válido ")]
+        [RegularExpression(@"^[a-zA-ZÀ-ÿ]*$", ErrorMessage = "Por favor introduza um email válido ")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Por favor introduza o Telemovel! ")]
         [RegularExpression(@"^?([0-9]{3})?([0−9]3)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$", ErrorMessage ="Por favor intruduza o numero correto")]
