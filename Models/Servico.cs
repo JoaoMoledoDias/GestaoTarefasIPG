@@ -16,13 +16,8 @@ namespace GestaoTarefasIPG.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza uma Descrição!")]
-        [StringLength(50, ErrorMessage = "A Descrição terá que conter no mínimo 5 caractéres válidos (A-Z)", MinimumLength = 3)]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z'\s]*$", ErrorMessage = "Por favor introduza uma Descrição válida!")]
         public string Descricao { get; set; }
-
         [Required(ErrorMessage = "Por favor introduza uma Localização!")]
-        [StringLength(50, ErrorMessage = "A Localização terá que conter no mínimo 5 caractéres válidos (A-Z)", MinimumLength = 3)]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z'\s]*$", ErrorMessage = "Por favor introduza uma Localização válida!")]
         public string Localizacao { get; set; }
     }
 }
