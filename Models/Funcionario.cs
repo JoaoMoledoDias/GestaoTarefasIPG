@@ -10,10 +10,11 @@ namespace GestaoTarefasIPG.Models
     {
         public int FuncionarioId { get; set; }
 
-        [StringLength(50, MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "O Nome terá que conter no mínimo 3 caractéres válidos (A-Z)", MinimumLength = 3)]
         [Required(ErrorMessage = "Por favor introduza o Nome!")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza o Serviço!")]
+        [StringLength(50, ErrorMessage = "O Nome terá que conter no mínimo 3 caractéres válidos (A-Z)", MinimumLength = 3)]
         public string Servico { get; set; }
         [Required(ErrorMessage = "Por favor introduza o Email!")]
         [RegularExpression(@"(\w+(\.\w+)*@[a-zA-Z_]+?\.[a-zA-Z]{2,6})", ErrorMessage = "Por favor introduza um email válido ")]
