@@ -92,8 +92,14 @@ namespace GestaoTarefasIPG.Models
                new Professor { Nome = "Capitolino Andrioleto", Email = "capandr12@gmail.com", Telemovel = "964587523", Numero_De_Professor = "1", Numero_De_Gabinete = "1" },
                new Professor { Nome = "Jusefino Correia", Email = "jusecorreia23@hotmail.com", Telemovel = "925418781", Numero_De_Professor = "2", Numero_De_Gabinete = "2" },
                new Professor { Nome = "Albertina Barata", Email = "albabara146@sapo.pt", Telemovel = "934124960", Numero_De_Professor = "3", Numero_De_Gabinete = "3" },
-               new Professor { Nome = "Eusébio Amaro", Email = "eusebamaro_345@outlook.com", Telemovel = "913215005", Numero_De_Professor = "4", Numero_De_Gabinete = "4" }
-                );
+               new Professor { Nome = "Eusébio Amaro", Email = "eusebamaro_345@outlook.com", Telemovel = "913215005", Numero_De_Professor = "4", Numero_De_Gabinete = "4" },
+               new Professor { Nome = "João Antunes", Email = "antu_joao_3@hotmail.com", Telemovel = "913235005", Numero_De_Professor = "5", Numero_De_Gabinete = "5" },
+               new Professor { Nome = "Pedro José", Email = "josepedro@gmail.com", Telemovel = "934676005", Numero_De_Professor = "6", Numero_De_Gabinete = "6" },
+               new Professor { Nome = "Ana Maria", Email = "maria_ana@hotmail.com", Telemovel = "924539075", Numero_De_Professor = "7", Numero_De_Gabinete = "7" },
+               new Professor { Nome = "José António", Email = "antonio_jose@sapo.pt", Telemovel = "967349560", Numero_De_Professor = "8", Numero_De_Gabinete = "8" },
+               new Professor { Nome = "Amaro Dias", Email = "ama_dias23@outlook.com", Telemovel = "920947234", Numero_De_Professor = "9", Numero_De_Gabinete = "9" },
+               new Professor { Nome = "Eduardo  Pereira", Email = "eudpereira_5@outlook.com", Telemovel = "923618459", Numero_De_Professor = "10", Numero_De_Gabinete = "10" }
+               );
             db.SaveChanges();
         }
     }
