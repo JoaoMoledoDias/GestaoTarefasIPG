@@ -17,12 +17,15 @@ namespace GestaoTarefasIPG.Models
 
         [StringLength(80)]
         [Display(Name = "Emaile do professor")]
+        [RegularExpression(@"(\w+(\.\w+)*@[a-zA-Z_]+?\.[a-zA-Z]{2,6})", ErrorMessage = "Por favor introduza um email válido ")]
         [Required(ErrorMessage = "Por favor introduza um Email!")]
         public string Email { get; set; }
 
         [StringLength(9)]
         [Display(Name = "Número de telemovel")]
         [Required(ErrorMessage = "Por favor introduza um Número de telemóvel!")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^?([0-9]{3})?([0−9]3)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de telefone invalido!")]
         public string Telemovel { get; set; }
 
         [StringLength(9)]
